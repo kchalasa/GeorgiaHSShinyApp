@@ -2,7 +2,7 @@
 title       : Coursera Developing Data Products
 subtitle    : Georgia High Schools - 2014 National Test Scores
 author      : Kanti Chalasani; Jan 24th 2015
-job         : Senior BI/Data Architect ; R Hacker
+job         : All Things Data/Analytics; R Hacker
 framework   : io2012        # {io2012, html5slides, shower, dzslides, revealjs,...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -120,15 +120,15 @@ AP - Rank assigned based on the percent of AP Course completions.
 ---
 
 
-AP 2014 Performance of Top 10 Schools in Georgia
+## AP 2014 Performance of Top 10 Schools in Georgia
 
 
-<div id = 'chart1a143c4e4493' class = 'rChart highcharts'></div>
+<div id = 'chart1a1449ce3594' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart1a143c4e4493",
+ "dom": "chart1a1449ce3594",
 "width":            800,
 "height":            400,
 "credits": {
@@ -222,9 +222,9 @@ AP 2014 Performance of Top 10 Schools in Georgia
 "subtitle": {
  "text": null 
 },
-"id": "chart1a143c4e4493",
+"id": "chart1a1449ce3594",
 "chart": {
- "renderTo": "chart1a143c4e4493" 
+ "renderTo": "chart1a1449ce3594" 
 } 
 });
         });
@@ -234,15 +234,15 @@ AP 2014 Performance of Top 10 Schools in Georgia
 ---
 
 
-SAT 2014 Performance of Top 5 Schools in Georgia
+## SAT 2014 Performance of Top 5 Schools in Georgia
 
 
-<div id = 'chart1a147adc1ae1' class = 'rChart highcharts'></div>
+<div id = 'chart1a142c353068' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart1a147adc1ae1",
+ "dom": "chart1a142c353068",
 "width":            800,
 "height":            400,
 "credits": {
@@ -306,9 +306,9 @@ SAT 2014 Performance of Top 5 Schools in Georgia
 "subtitle": {
  "text": null 
 },
-"id": "chart1a147adc1ae1",
+"id": "chart1a142c353068",
 "chart": {
- "renderTo": "chart1a147adc1ae1" 
+ "renderTo": "chart1a142c353068" 
 } 
 });
         });
@@ -322,7 +322,7 @@ SAT 2014 Performance of Top 5 Schools in Georgia
 
 Average Scores for Top Performing Schools by Assessment 
 
-Note: Page under contruction - functionality can be viewed using runDeck()]
+Note for R Fans: Page under construction - functionality can be viewed using runDeck()]
 
 <div class="row-fluid">
   <div class="span4">

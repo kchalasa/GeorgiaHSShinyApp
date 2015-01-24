@@ -2,7 +2,7 @@
 title       : Coursera Developing Data Products
 subtitle    : Georgia High Schools - 2014 National Test Scores
 author      : Kanti Chalasani; Jan 24th 2015
-job         : Senior BI/Data Architect ; R Hacker
+job         : All Things Data/Analytics; R Hacker
 framework   : io2012        # {io2012, html5slides, shower, dzslides, revealjs,...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -109,7 +109,7 @@ AP - Rank assigned based on the percent of AP Course completions.
 ---
 
 
-AP 2014 Performance of Top 10 Schools in Georgia
+## AP 2014 Performance of Top 10 Schools in Georgia
 
 ```{r nvd3plot5, echo=F, results='asis', cache=F}
 require(rCharts)
@@ -126,7 +126,7 @@ h1$show('inline')
 ---
 
 
-SAT 2014 Performance of Top 5 Schools in Georgia
+## SAT 2014 Performance of Top 5 Schools in Georgia
 
 ```{r nvd3plot3, echo=F, results='asis', cache=F}
 require(rCharts)
@@ -149,7 +149,7 @@ r1$show('inline')
 
 Average Scores for Top Performing Schools by Assessment 
 
-Note: Page under contruction - functionality can be viewed using runDeck()]
+Note for R Fans: Page under construction - functionality can be viewed using runDeck()]
 
 ```{r opts.label ='shiny' }
 library(shiny)
