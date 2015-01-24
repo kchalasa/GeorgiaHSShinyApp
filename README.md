@@ -1,10 +1,11 @@
-## Reproducible Shiny Data Product - Analysis of 2014 Georgia Public High School Assessment Score
+## Reproducible Shiny Data Product - Analysis of 2014 Georgia Public High School Assessment Average Scores
 
 This data product will allow interested parents of high school students in Georgia or anyone else interested in education data in Georgia to view
-how a specific high schools score in standardized national tests as compared to other schools within the State of Georgia, United States.
+how a specific high schools average scores look standardized national testing as compared to other schools within the State of Georgia, United States.
+To be specific SAT, AP and ACT average scores for 2014 Georgia Public Schools are included here for your review.
 
 This assignment was done as part of Coursera "Developing Data Products" course. Project had two specific requirements, 1) To create
- a website using Shiny Application in R; 2) To create a presentation explianing this application using slidify in R.
+ a website using Shiny Application in R; 2) To create a presentation explaining this application using slidify in R.
 
 Course Project Files in this repository:
 
@@ -21,6 +22,6 @@ The 2014 Georgia Public Schools assessment data was obtained for this assignment
 
 * [Georgia K12 Public Schools](http://www.gadoe.org/CCRPI/Documents/2014/2014%20CCRPI%20Indicator%20Score.xls)
 * [SAT and AP data](http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Documents/COLLEGE%20READINESS/2014-SAT-GA-School-Level.xlsx)
-* [ACT Data] http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Documents/COLLEGE%20READINESS/2014-ACT-GA-School-Level.xls)
+* [ACT Data] (http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Documents/COLLEGE%20READINESS/2014-ACT-GA-School-Level.xls)
 * Data & Reporting section data reports were used as a reference for pre processing and tidying this data set.
 
