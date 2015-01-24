@@ -1,42 +1,33 @@
 ---
-title       : Simple Data Product Project
+title       : Coursera Developing Data Products
 subtitle    : Georgia High Schools - 2014 National Test Scores
-author      : Kanti Chalasani
-job         : Senior BI/Data Architect 
+author      : Kanti Chalasani; Jan 24th 2015
+job         : Senior BI/Data Architect ; R Hacker
 framework   : io2012        # {io2012, html5slides, shower, dzslides, revealjs,...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [bootstrap, quiz, shiny, interactive]   # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft, selfcontained}
-ext_widgets : {rCharts: [libraries/nvd3]}
+ext_widgets : {rCharts: ["libraries/highcharts", "libraries/nvd3", "libraries/morris"]}
 knit        : slidify::knit2slides
 
-
---- #montreal bg:url(http://goo.gl/cF6W2)
-
-
-# Coursera Developing Data Products 
-
-**2014 High School Scores - State of Georgia, US**
- 
-
-* **Kanti Chalasani**
-* **January 23rd 2015**
 
 ---
 
 
 ## Project Introduction
 
-As a parent I am always interested in the statistical facts about the schools in our school district as compared to  other schools within the State of Georgia. For this assignment, I chose to compare the National Test Scores performance and AP Course completions in 2014 for public schools within the State of Georgia, United States.
+As a parent I am always interested in the statistical facts about the schools in our school district as compared to  other schools within the State of Georgia. This assignment motivated me to choose the 2014 data for National Tests and AP Course completions  for public schools within the State of Georgia, United States.
 
-Data Source : [Georgia Deparment of Education (GaDOE)](http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Pages/SAT-and-ACT-Results.aspx)
+Data Source : [Georgia Deparment of Education (GaDOE)](http://www.gadoe.org)
 
-Pre processed this data using other information on the same [website](http://www.gadoe.org/CCRPI/Pages/default.aspx) to prepare final data files that contain district information for this project. Data cleansing techniques were applied but have been kept out of score for this presentation.
+Pre processed [SAT, AP](http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Documents/COLLEGE%20READINESS/2014-SAT-GA-School-Level.xlsx), [ACT](http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Documents/COLLEGE%20READINESS/2014-ACT-GA-School-Level.xls) and [Georgia high schools](http://www.gadoe.org/CCRPI/Documents/2014/2014%20CCRPI%20Indicator%20Score.xls) data to prepare final data sets needed for this project. Several data cleansing techniques were applied. Some data were derived, like SAT AVG Combined Score, State Ranks, dynamic ranks etc. 
+
+Note : Some schools had sparse data and were dropped from the data set in order to meet the tight timelines for this project. 
 
 ---
 
-## The Data
+## The Data Elements
 
 
 
@@ -94,7 +85,7 @@ This website is organized into left and right panels.
 
 ---
 
-## Rankings Defined
+## Derivations - Averages, Percents and Rankings 
 
 * State.Rank - Rank assigned to this school within the State of Georgia.
 * Selected.Schools.Rank - Rank assigned on the fly based on your current selection of the schools.
@@ -106,6 +97,8 @@ SAT - Rank assigned based on SAT Combined Score.
 ACT - Rank assigned based on ACT Composite Score
 
 AP - Rank assigned based on the percent of AP Course completions.
+
+* SAT Combined Average, AP Pass Percents were also calculated.
 
 
 ---
@@ -130,12 +123,12 @@ AP - Rank assigned based on the percent of AP Course completions.
 AP 2014 Performance of Top 10 Schools in Georgia
 
 
-<div id = 'chart2730512820ba' class = 'rChart highcharts'></div>
+<div id = 'chart1a143c4e4493' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart2730512820ba",
+ "dom": "chart1a143c4e4493",
 "width":            800,
 "height":            400,
 "credits": {
@@ -229,9 +222,9 @@ AP 2014 Performance of Top 10 Schools in Georgia
 "subtitle": {
  "text": null 
 },
-"id": "chart2730512820ba",
+"id": "chart1a143c4e4493",
 "chart": {
- "renderTo": "chart2730512820ba" 
+ "renderTo": "chart1a143c4e4493" 
 } 
 });
         });
@@ -241,15 +234,15 @@ AP 2014 Performance of Top 10 Schools in Georgia
 ---
 
 
-SAT 2014 Performance of Top 10 Schools in Georgia
+SAT 2014 Performance of Top 5 Schools in Georgia
 
 
-<div id = 'chart2730366a2a13' class = 'rChart highcharts'></div>
+<div id = 'chart1a147adc1ae1' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart2730366a2a13",
+ "dom": "chart1a147adc1ae1",
 "width":            800,
 "height":            400,
 "credits": {
@@ -313,9 +306,9 @@ SAT 2014 Performance of Top 10 Schools in Georgia
 "subtitle": {
  "text": null 
 },
-"id": "chart2730366a2a13",
+"id": "chart1a147adc1ae1",
 "chart": {
- "renderTo": "chart2730366a2a13" 
+ "renderTo": "chart1a147adc1ae1" 
 } 
 });
         });
@@ -325,9 +318,11 @@ SAT 2014 Performance of Top 10 Schools in Georgia
 
 ---
 
-Interactive Report 
+# Interactive Report 
 
-2014 Average Top Score by selected assessment type in Georgia
+Average Scores for Top Performing Schools by Assessment 
+
+Note: Page under contruction - functionality can be viewed using runDeck()]
 
 <div class="row-fluid">
   <div class="span4">
@@ -348,13 +343,21 @@ Interactive Report
   </div>
   <div class="span8">
     <div id="ASSMT1" class="shiny-text-output"></div>
+    <br/>
     <hr/>
+    <br/>
     <div id="ASSMT" class="shiny-text-output"></div>
   </div>
 </div>
 
----
+----
+
 
 ## Thank You
 
-Thank You for visiting this website. 
+Thank You for your time.
+
+My First Shiny Application: https://kchalasa.shinyapps.io/GANationalTests_prj/
+
+
+

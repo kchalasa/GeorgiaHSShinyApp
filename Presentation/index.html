@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simple Data Product Project</title>
+  <title>Coursera Developing Data Products</title>
   <meta charset="utf-8">
-  <meta name="description" content="Simple Data Product Project">
-  <meta name="author" content="Kanti Chalasani">
+  <meta name="description" content="Coursera Developing Data Products">
+  <meta name="author" content="Kanti Chalasani; Jan 24th 2015">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -39,26 +39,27 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Simple Data Product Project</h1>
+    <h1>Coursera Developing Data Products</h1>
     <h2>Georgia High Schools - 2014 National Test Scores</h2>
-    <p>Kanti Chalasani<br/>Senior BI/Data Architect</p>
+    <p>Kanti Chalasani; Jan 24th 2015<br/>Senior BI/Data Architect ; R Hacker</p>
   </hgroup>
   <article></article>  
 </slide>
     
 
     <!-- SLIDES -->
-    <slide class="" id="montreal" style="background:url(http://goo.gl/cF6W2);">
+    <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h1>Coursera Developing Data Products</h1>
+    <h2>Project Introduction</h2>
   </hgroup>
   <article data-timings="">
-    <p><strong>2014 High School Scores - State of Georgia, US</strong></p>
+    <p>As a parent I am always interested in the statistical facts about the schools in our school district as compared to  other schools within the State of Georgia. This assignment motivated me to choose the 2014 data for National Tests and AP Course completions  for public schools within the State of Georgia, United States.</p>
 
-<ul>
-<li><strong>Kanti Chalasani</strong></li>
-<li><strong>January 23rd 2015</strong></li>
-</ul>
+<p>Data Source : <a href="http://www.gadoe.org">Georgia Deparment of Education (GaDOE)</a></p>
+
+<p>Pre processed <a href="http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Documents/COLLEGE%20READINESS/2014-SAT-GA-School-Level.xlsx">SAT, AP</a>, <a href="http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Documents/COLLEGE%20READINESS/2014-ACT-GA-School-Level.xls">ACT</a> and <a href="http://www.gadoe.org/CCRPI/Documents/2014/2014%20CCRPI%20Indicator%20Score.xls">Georgia high schools</a> data to prepare final data sets needed for this project. Several data cleansing techniques were applied. Some data were derived, like SAT AVG Combined Score, State Ranks, dynamic ranks etc. </p>
+
+<p>Note : Some schools had sparse data and were dropped from the data set in order to meet the tight timelines for this project. </p>
 
   </article>
   <!-- Presenter Notes -->
@@ -66,22 +67,7 @@
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Project Introduction</h2>
-  </hgroup>
-  <article data-timings="">
-    <p>As a parent I am always interested in the statistical facts about the schools in our school district as compared to  other schools within the State of Georgia. For this assignment, I chose to compare the National Test Scores performance and AP Course completions in 2014 for public schools within the State of Georgia, United States.</p>
-
-<p>Data Source : <a href="http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Pages/SAT-and-ACT-Results.aspx">Georgia Deparment of Education (GaDOE)</a></p>
-
-<p>Pre processed this data using other information on the same <a href="http://www.gadoe.org/CCRPI/Pages/default.aspx">website</a> to prepare final data files that contain district information for this project. Data cleansing techniques were applied but have been kept out of score for this presentation.</p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-3" style="background:;">
-  <hgroup>
-    <h2>The Data</h2>
+    <h2>The Data Elements</h2>
   </hgroup>
   <article data-timings="">
     <p><strong>SAT Data</strong></p>
@@ -117,7 +103,7 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-4" style="background:;">
+<slide class="" id="slide-3" style="background:;">
   <hgroup>
     <h2>How is this website organized?</h2>
   </hgroup>
@@ -139,9 +125,9 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-5" style="background:;">
+<slide class="" id="slide-4" style="background:;">
   <hgroup>
-    <h2>Rankings Defined</h2>
+    <h2>Derivations - Averages, Percents and Rankings</h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -156,11 +142,15 @@
 
 <p>AP - Rank assigned based on the percent of AP Course completions.</p>
 
+<ul>
+<li>SAT Combined Average, AP Pass Percents were also calculated.</li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="" id="slide-5" style="background:;">
   <hgroup>
     <h2>Alanta Metro Public School Districts Definition</h2>
   </hgroup>
@@ -183,17 +173,17 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-7" style="background:;">
+<slide class="" id="slide-6" style="background:;">
   <article data-timings="">
     <p>AP 2014 Performance of Top 10 Schools in Georgia</p>
 
-<div id = 'chart2730512820ba' class = 'rChart highcharts'></div>
+<div id = 'chart1a143c4e4493' class = 'rChart highcharts'></div>
 
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart2730512820ba",
+ "dom": "chart1a143c4e4493",
 "width":            800,
 "height":            400,
 "credits": {
@@ -287,9 +277,9 @@
 "subtitle": {
  "text": null 
 },
-"id": "chart2730512820ba",
+"id": "chart1a143c4e4493",
 "chart": {
- "renderTo": "chart2730512820ba" 
+ "renderTo": "chart1a143c4e4493" 
 } 
 });
         });
@@ -300,17 +290,17 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-8" style="background:;">
+<slide class="" id="slide-7" style="background:;">
   <article data-timings="">
-    <p>SAT 2014 Performance of Top 10 Schools in Georgia</p>
+    <p>SAT 2014 Performance of Top 5 Schools in Georgia</p>
 
-<div id = 'chart2730366a2a13' class = 'rChart highcharts'></div>
+<div id = 'chart1a147adc1ae1' class = 'rChart highcharts'></div>
 
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart2730366a2a13",
+ "dom": "chart1a147adc1ae1",
 "width":            800,
 "height":            400,
 "credits": {
@@ -374,9 +364,9 @@
 "subtitle": {
  "text": null 
 },
-"id": "chart2730366a2a13",
+"id": "chart1a147adc1ae1",
 "chart": {
- "renderTo": "chart2730366a2a13" 
+ "renderTo": "chart1a147adc1ae1" 
 } 
 });
         });
@@ -387,11 +377,14 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-9" style="background:;">
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h1>Interactive Report</h1>
+  </hgroup>
   <article data-timings="">
-    <p>Interactive Report </p>
+    <p>Average Scores for Top Performing Schools by Assessment </p>
 
-<p>2014 Average Top Score by selected assessment type in Georgia</p>
+<p>Note: Page under contruction - functionality can be viewed using runDeck()]</p>
 
 <div class="row-fluid">
   <div class="span4">
@@ -412,7 +405,9 @@
   </div>
   <div class="span8">
     <div id="ASSMT1" class="shiny-text-output"></div>
+    <br/>
     <hr/>
+    <br/>
     <div id="ASSMT" class="shiny-text-output"></div>
   </div>
 </div>
@@ -421,12 +416,14 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-10" style="background:;">
+<slide class="" id="slide-9" style="background:;">
   <hgroup>
     <h2>Thank You</h2>
   </hgroup>
   <article data-timings="">
-    <p>Thank You for visiting this website. </p>
+    <p>Thank You for your time.</p>
+
+<p>My First Shiny Application: <a href="https://kchalasa.shinyapps.io/GANationalTests_prj/">https://kchalasa.shinyapps.io/GANationalTests_prj/</a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -438,37 +435,37 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Coursera Developing Data Products'>
+        data-slide=1 title='Project Introduction'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Project Introduction'>
+        data-slide=2 title='The Data Elements'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='The Data'>
+        data-slide=3 title='How is this website organized?'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='How is this website organized?'>
+        data-slide=4 title='Derivations - Averages, Percents and Rankings'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Rankings Defined'>
+        data-slide=5 title='Alanta Metro Public School Districts Definition'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Alanta Metro Public School Districts Definition'>
+        data-slide=6 title=''>
          6
       </a>
     </li>
@@ -480,20 +477,14 @@
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title=''>
+        data-slide=8 title='Interactive Report'>
          8
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title=''>
+        data-slide=9 title='Thank You'>
          9
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Thank You'>
-         10
       </a>
     </li>
   </ul>
