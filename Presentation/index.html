@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Data Product Project</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Simple Data Product Project">
+  <meta name="author" content="Kanti Chalasani">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  <script src="libraries/widgets/highcharts/js/jquery-1.9.1.min.js"></script>
+<script src="libraries/widgets/highcharts/js/highcharts.js"></script>
+<script src="libraries/widgets/highcharts/js/highcharts-more.js"></script>
+<script src="libraries/widgets/highcharts/js/exporting.js"></script>
+
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Simple Data Product Project</h1>
+    <h2>Georgia High Schools - 2014 National Test Scores</h2>
+    <p>Kanti Chalasani<br/>Senior BI/Data Architect</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="montreal" style="background:url(http://goo.gl/cF6W2);">
+  <hgroup>
+    <h1>Coursera Developing Data Products</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>2014 High School Scores - State of Georgia, US</strong></p>
+
+<ul>
+<li><strong>Kanti Chalasani</strong></li>
+<li><strong>January 23rd 2015</strong></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Project Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>As a parent I am always interested in the statistical facts about the schools in our school district as compared to  other schools within the State of Georgia. For this assignment, I chose to compare the National Test Scores performance and AP Course completions in 2014 for public schools within the State of Georgia, United States.</p>
+
+<p>Data Source : <a href="http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Pages/SAT-and-ACT-Results.aspx">Georgia Deparment of Education (GaDOE)</a></p>
+
+<p>Pre processed this data using other information on the same <a href="http://www.gadoe.org/CCRPI/Pages/default.aspx">website</a> to prepare final data files that contain district information for this project. Data cleansing techniques were applied but have been kept out of score for this presentation.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>SAT Data</strong></p>
+
+<pre><code>##  [1] &quot;District_Code&quot; &quot;District&quot;      &quot;School_Code&quot;   &quot;School&quot;       
+##  [5] &quot;Avg_Combined&quot;  &quot;State.Rank&quot;    &quot;Test_Takers&quot;   &quot;Avg_Reading&quot;  
+##  [9] &quot;Avg_Math&quot;      &quot;Avg_Writing&quot;   &quot;School_Year&quot;   &quot;AICode&quot;
+</code></pre>
+
+<p><strong>ACT Data</strong></p>
+
+<pre><code>##  [1] &quot;District_Code&quot; &quot;District&quot;      &quot;SCHOOL.ID&quot;     &quot;School&quot;       
+##  [5] &quot;Avg_Composite&quot; &quot;State.Rank&quot;    &quot;Test_Takers&quot;   &quot;Avg_Eng&quot;      
+##  [9] &quot;Avg_Math&quot;      &quot;Avg_Reading&quot;   &quot;Avg_Science&quot;   &quot;AICODE&quot;       
+## [13] &quot;School_Year&quot;
+</code></pre>
+
+<p><strong>AP Data</strong></p>
+
+<pre><code>##  [1] &quot;District_Code&quot;                    
+##  [2] &quot;District&quot;                         
+##  [3] &quot;School_Code&quot;                      
+##  [4] &quot;School&quot;                           
+##  [5] &quot;AP_PASS_PCT&quot;                      
+##  [6] &quot;State.Rank&quot;                       
+##  [7] &quot;Test_Takers&quot;                      
+##  [8] &quot;Total.Exams.Taken&quot;                
+##  [9] &quot;Num.of.Exams.with.Scores.3.4.or.5&quot;
+## [10] &quot;AICode&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>How is this website organized?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This website is organized into left and right panels.</p>
+
+<ul>
+<li><p>Left Panel - Data selection</p>
+
+<p>This panel allows you to choose the data level - State or District (in GA) or Atlanta Metro School Districts. This selection only applies to the first three tabs on the right panel.</p></li>
+<li><p>Right panel - Data Display</p>
+
+<p>This is organized into four tabs. First there tabs are one for each of the standardized assessments - SAT, AP and ACT respectively. </p>
+
+<p>Fourth &quot;School Comparison&quot; tab  allows you to select the assessment type and any two high schools within the State of Georgia for comparison.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Rankings Defined</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>State.Rank - Rank assigned to this school within the State of Georgia.</li>
+<li><p>Selected.Schools.Rank - Rank assigned on the fly based on your current selection of the schools.</p></li>
+<li><p>Ranking Criteria - Highest to the lowest. </p></li>
+</ul>
+
+<p>SAT - Rank assigned based on SAT Combined Score.  </p>
+
+<p>ACT - Rank assigned based on ACT Composite Score</p>
+
+<p>AP - Rank assigned based on the percent of AP Course completions.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Alanta Metro Public School Districts Definition</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Atlanta Public Schools</li>
+<li>Cherokee County</li>
+<li>Cobb County<br></li>
+<li>DeKalb County</li>
+<li>Douglas County</li>
+<li>Forsyth County</li>
+<li>Fulton County</li>
+<li>Gwinnett County</li>
+<li>Buford City</li>
+<li>Decatur City</li>
+<li>Marietta City</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <article data-timings="">
+    <p>AP 2014 Performance of Top 10 Schools in Georgia</p>
+
+<div id = 'chart2730512820ba' class = 'rChart highcharts'></div>
+
+<script type='text/javascript'>
+    (function($){
+        $(function () {
+            var chart = new Highcharts.Chart({
+ "dom": "chart2730512820ba",
+"width":            800,
+"height":            400,
+"credits": {
+ "href": null,
+"text": null 
+},
+"exporting": {
+ "enabled": false 
+},
+"title": {
+ "text": null 
+},
+"yAxis": [
+ {
+ "title": {
+ "text": "AP_PASS_PCT" 
+} 
+} 
+],
+"series": [
+ {
+ "data": [
+ [
+ "Bremen High School",
+         81.63,
+98 
+],
+[
+ "Chattahoochee High School",
+         83.55,
+1574 
+],
+[
+ "Etowah High School",
+         81.97,
+638 
+],
+[
+ "Gwinnett School of Mathematics Science and Technol",
+         81.76,
+1453 
+],
+[
+ "McIntosh High School",
+         82.22,
+838 
+],
+[
+ "Northview High School",
+         82.42,
+1826 
+],
+[
+ "Roswell High School",
+          81.8,
+1857 
+],
+[
+ "Walton High School",
+          88.9,
+3001 
+],
+[
+ "Wheeler High School",
+         86.66,
+937 
+],
+[
+ "Woodstock High School",
+         87.36,
+617 
+] 
+],
+"type": "bubble",
+"marker": {
+ "radius":              3 
+} 
+} 
+],
+"legend": {
+ "enabled": false 
+},
+"xAxis": [
+ {
+ "title": {
+ "text": "School" 
+},
+"categories": [ "Bremen High School", "Chattahoochee High School", "Etowah High School", "Gwinnett School of Mathematics Science and Technol", "McIntosh High School", "Northview High School", "Roswell High School", "Walton High School", "Wheeler High School", "Woodstock High School" ] 
+} 
+],
+"subtitle": {
+ "text": null 
+},
+"id": "chart2730512820ba",
+"chart": {
+ "renderTo": "chart2730512820ba" 
+} 
+});
+        });
+    })(jQuery);
+</script>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <article data-timings="">
+    <p>SAT 2014 Performance of Top 10 Schools in Georgia</p>
+
+<div id = 'chart2730366a2a13' class = 'rChart highcharts'></div>
+
+<script type='text/javascript'>
+    (function($){
+        $(function () {
+            var chart = new Highcharts.Chart({
+ "dom": "chart2730366a2a13",
+"width":            800,
+"height":            400,
+"credits": {
+ "href": null,
+"text": null 
+},
+"exporting": {
+ "enabled": false 
+},
+"title": {
+ "text": null 
+},
+"yAxis": [
+ {
+ "title": {
+ "text": "Avg_Combined" 
+} 
+} 
+],
+"series": [
+ {
+ "data": [
+ [
+ "Alpharetta High School",
+1704 
+],
+[
+ "Columbus High School",
+1702 
+],
+[
+ "Gwinnett School of Mathematics, Science and Technology",
+1912 
+],
+[
+ "Northview High School",
+1779 
+],
+[
+ "Walton High School",
+1724 
+] 
+],
+"type": "bar",
+"marker": {
+ "radius":              3 
+} 
+} 
+],
+"legend": {
+ "enabled": false 
+},
+"xAxis": [
+ {
+ "title": {
+ "text": "School" 
+},
+"categories": [ "Alpharetta High School", "Columbus High School", "Gwinnett School of Mathematics, Science and Technology", "Northview High School", "Walton High School" ] 
+} 
+],
+"subtitle": {
+ "text": null 
+},
+"id": "chart2730366a2a13",
+"chart": {
+ "renderTo": "chart2730366a2a13" 
+} 
+});
+        });
+    })(jQuery);
+</script>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <article data-timings="">
+    <p>Interactive Report </p>
+
+<p>2014 Average Top Score by selected assessment type in Georgia</p>
+
+<div class="row-fluid">
+  <div class="span4">
+    <form class="well">
+      <label class="control-label" for="ASSMT">Choose Assessment Type</label>
+      <select id="ASSMT"><option value="SAT" selected>SAT</option>
+<option value="ACT">ACT</option>
+<option value="AP">AP</option></select>
+      <script type="application/json" data-for="ASSMT" data-nonempty="">{}</script>
+      <label class="control-label" for="Rnk">Choose School Rank 1 to 5</label>
+      <select id="Rnk"><option value="1" selected>1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option></select>
+      <script type="application/json" data-for="Rnk" data-nonempty="">{}</script>
+    </form>
+  </div>
+  <div class="span8">
+    <div id="ASSMT1" class="shiny-text-output"></div>
+    <hr/>
+    <div id="ASSMT" class="shiny-text-output"></div>
+  </div>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Thank You</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Thank You for visiting this website. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Coursera Developing Data Products'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Project Introduction'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The Data'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How is this website organized?'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Rankings Defined'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Alanta Metro Public School Districts Definition'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title=''>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title=''>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title=''>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Thank You'>
+         10
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
+<script src="libraries/widgets/interactive/js/opencpu-0.5.js"></script>
+<script src="libraries/widgets/interactive/js/interactive.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/slider/js/jquery.slider.min.js"></script>
+  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/slider/css/jquery.slider.min.css"></link>
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

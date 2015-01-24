@@ -1,0 +1,182 @@
+---
+title       : Simple Data Product Project
+subtitle    : Georgia High Schools - 2014 National Test Scores
+author      : Kanti Chalasani
+job         : Senior BI/Data Architect 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, revealjs,...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [bootstrap, quiz, shiny, interactive]   # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft, selfcontained}
+ext_widgets : {rCharts: [libraries/nvd3]}
+knit        : slidify::knit2slides
+
+
+--- #montreal bg:url(http://goo.gl/cF6W2)
+
+
+# Coursera Developing Data Products 
+
+**2014 High School Scores - State of Georgia, US**
+ 
+
+* **Kanti Chalasani**
+* **January 23rd 2015**
+
+---
+
+
+## Project Introduction
+
+As a parent I am always interested in the statistical facts about the schools in our school district as compared to  other schools within the State of Georgia. For this assignment, I chose to compare the National Test Scores performance and AP Course completions in 2014 for public schools within the State of Georgia, United States.
+
+Data Source : [Georgia Deparment of Education (GaDOE)](http://www.gadoe.org/Curriculum-Instruction-and-Assessment/Curriculum-and-Instruction/Pages/SAT-and-ACT-Results.aspx)
+
+Pre processed this data using other information on the same [website](http://www.gadoe.org/CCRPI/Pages/default.aspx) to prepare final data files that contain district information for this project. Data cleansing techniques were applied but have been kept out of score for this presentation.
+
+---
+
+## The Data
+
+```{r echo=FALSE}
+source("helpers.R")
+write.csv(file="SATTop5.csv",SAT[1:5,])
+write.csv(file="APTop10.csv",AP[1:10,])
+write.csv(file="ACTTop10.csv",ACT[1:10,])
+```
+
+**SAT Data**
+
+```{r echo=FALSE}
+names(SAT)
+```
+
+**ACT Data**
+
+```{r echo=FALSE}
+names(ACT)
+```
+
+**AP Data**
+
+```{r echo=FALSE}
+names(AP)
+```
+
+---
+
+## How is this website organized?
+
+This website is organized into left and right panels.
+
+* Left Panel - Data selection
+
+  This panel allows you to choose the data level - State or District (in GA) or Atlanta Metro School Districts. This selection only applies to the first three tabs on the right panel.
+  
+* Right panel - Data Display
+
+  This is organized into four tabs. First there tabs are one for each of the standardized assessments - SAT, AP and ACT respectively. 
+
+  Fourth "School Comparison" tab  allows you to select the assessment type and any two high schools within the State of Georgia for comparison.
+
+
+---
+
+## Rankings Defined
+
+* State.Rank - Rank assigned to this school within the State of Georgia.
+* Selected.Schools.Rank - Rank assigned on the fly based on your current selection of the schools.
+
+* Ranking Criteria - Highest to the lowest. 
+
+SAT - Rank assigned based on SAT Combined Score.  
+
+ACT - Rank assigned based on ACT Composite Score
+
+AP - Rank assigned based on the percent of AP Course completions.
+
+
+---
+
+## Alanta Metro Public School Districts Definition
+
+* Atlanta Public Schools
+* Cherokee County
+* Cobb County                                         
+* DeKalb County
+* Douglas County
+* Forsyth County
+* Fulton County
+* Gwinnett County
+* Buford City
+* Decatur City
+* Marietta City
+
+---
+
+
+AP 2014 Performance of Top 10 Schools in Georgia
+
+```{r nvd3plot5, echo=F, results='asis', cache=F}
+require(rCharts)
+require(knitr)
+library(reshape2)
+
+APTop10<-read.csv("APTop10.csv")
+h1 <- hPlot(x = "School", y = "AP_PASS_PCT", size = "Total.Exams.Taken", data = APTop10, type = "bubble")
+
+h1$show('inline')
+
+```
+
+---
+
+
+SAT 2014 Performance of Top 10 Schools in Georgia
+
+```{r nvd3plot3, echo=F, results='asis', cache=F,fig.height=4,fig.width=5}
+require(rCharts)
+require(knitr)
+##SATTop5<-SAT[1:5,]
+SATTop5<-read.csv("SATTop5.csv")
+r1 <- hPlot(Avg_Combined ~ School, 
+            data = SATTop5, 
+            color = 'School',
+            type = 'bar'
+)
+r1$show('inline')
+
+```
+
+
+---
+
+Interactive Report 
+
+2014 Average Top Score by selected assessment type in Georgia
+
+```{r opts.label ='shiny' }
+library(shiny)
+require(rCharts)
+require(knitr)
+slidifyUI(
+  sidebarPanel(
+    selectInput("ASSMT","Choose Assessment Type",choices =c("SAT","ACT","AP"),selected="SAT"),
+    selectInput("Rnk","Choose School Rank 1 to 5",choices =c(1:5),selected="1")
+    ),
+    mainPanel(
+      textOutput("ASSMT1"),
+      hr(),
+      textOutput("ASSMT")
+      ##fluidRow(    dataTableOutput(outputId="sattable")          ),
+      ##tags$div(id='nvd3plot',class='shiny-html-output nvd3 rChart')
+    )
+)
+
+```
+
+---
+
+## Thank You
+
+Thank You for visiting this website. 
