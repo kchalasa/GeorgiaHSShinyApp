@@ -2,7 +2,7 @@
 title       : Coursera Developing Data Products
 subtitle    : Georgia High Schools - 2014 National Test Scores
 author      : Kanti Chalasani; Jan 24th 2015
-job         : All Things Data/Analytics; R Hacker
+job         : Senior BI/Data Architect ; R Hacker
 framework   : io2012        # {io2012, html5slides, shower, dzslides, revealjs,...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -11,9 +11,7 @@ mode        : selfcontained # {standalone, draft, selfcontained}
 ext_widgets : {rCharts: ["libraries/highcharts", "libraries/nvd3", "libraries/morris"]}
 knit        : slidify::knit2slides
 
-
 ---
-
 
 ## Project Introduction
 
@@ -51,7 +49,7 @@ names(ACT)
 
 **AP Data**
 
-```{r echo=FALSE, cache=FALSE}
+```{r echo=FALSE, cache=FALSE, fig.height=2}
 names(AP)
 ```
 
@@ -70,6 +68,8 @@ This website is organized into left and right panels.
   This is organized into four tabs. First there tabs are one for each of the standardized assessments - SAT, AP and ACT respectively. 
 
   Fourth "School Comparison" tab  allows you to select the assessment type and any two high schools within the State of Georgia for comparison.
+  
+Shiny Application Link: http://kchalasa.shinyapps.io/GANationalTests_prj/
 
 
 ---
@@ -79,7 +79,7 @@ This website is organized into left and right panels.
 * State.Rank - Rank assigned to this school within the State of Georgia.
 * Selected.Schools.Rank - Rank assigned on the fly based on your current selection of the schools.
 
-* Ranking Criteria - Highest to the lowest. 
+* Ranking Criteria - Highest to the lowest  
 
 SAT - Rank assigned based on SAT Combined Score.  
 
@@ -87,46 +87,14 @@ ACT - Rank assigned based on ACT Composite Score
 
 AP - Rank assigned based on the percent of AP Course completions.
 
-* SAT Combined Average, AP Pass Percents were also calculated.
+* SAT Combined Average=SAT_AVG_Reading + SAT_AVG_Math + SAT_AVG_Writing
+* AP Pass Percents = (Total Exams with a Score of 3,4 or 5)/ (Total AP Exams Taken) *100
 
 
 ---
 
-## Alanta Metro Public School Districts Definition
 
-* Atlanta Public Schools
-* Cherokee County
-* Cobb County                                         
-* DeKalb County
-* Douglas County
-* Forsyth County
-* Fulton County
-* Gwinnett County
-* Buford City
-* Decatur City
-* Marietta City
-
----
-
-
-## AP 2014 Performance of Top 10 Schools in Georgia
-
-```{r nvd3plot5, echo=F, results='asis', cache=F}
-require(rCharts)
-require(knitr)
-library(reshape2)
-
-APTop10<-read.csv("APTop10.csv")
-h1 <- hPlot(x = "School", y = "AP_PASS_PCT", size = "Total.Exams.Taken", data = APTop10, type = "bubble")
-
-h1$show('inline')
-
-```
-
----
-
-
-## SAT 2014 Performance of Top 5 Schools in Georgia
+SAT 2014 Performance of Top 5 Schools in Georgia
 
 ```{r nvd3plot3, echo=F, results='asis', cache=F}
 require(rCharts)
@@ -141,47 +109,5 @@ r1 <- hPlot(Avg_Combined ~ School,
 r1$show('inline')
 
 ```
-
-
----
-
-# Interactive Report 
-
-Average Scores for Top Performing Schools by Assessment 
-
-Note for R Fans: Page under construction - functionality can be viewed using runDeck()]
-
-```{r opts.label ='shiny' }
-library(shiny)
-require(rCharts)
-require(knitr)
-
-slidifyUI(
-  sidebarPanel(
-    selectInput("ASSMT","Choose Assessment Type",choices =c("SAT","ACT","AP"),selected="SAT"),
-    selectInput("Rnk","Choose School Rank 1 to 5",choices =c(1:5),selected="1")
-    ),
-    mainPanel(
-      textOutput("ASSMT1"),
-       tags$br(),
-      tags$hr(),
-      tags$br(),
-      textOutput("ASSMT")
-      ##fluidRow(    dataTableOutput(outputId="sattable")          ),
-      ##tags$div(id='nvd3plot',class='shiny-html-output nvd3 rChart')
-    )
-)
-
-```
-
-----
-
-
-## Thank You
-
-Thank You for your time.
-
-My First Shiny Application: https://kchalasa.shinyapps.io/GANationalTests_prj/
-
 
 

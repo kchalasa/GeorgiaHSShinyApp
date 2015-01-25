@@ -2,7 +2,7 @@
 title       : Coursera Developing Data Products
 subtitle    : Georgia High Schools - 2014 National Test Scores
 author      : Kanti Chalasani; Jan 24th 2015
-job         : All Things Data/Analytics; R Hacker
+job         : Senior BI/Data Architect ; R Hacker
 framework   : io2012        # {io2012, html5slides, shower, dzslides, revealjs,...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -11,9 +11,7 @@ mode        : selfcontained # {standalone, draft, selfcontained}
 ext_widgets : {rCharts: ["libraries/highcharts", "libraries/nvd3", "libraries/morris"]}
 knit        : slidify::knit2slides
 
-
 ---
-
 
 ## Project Introduction
 
@@ -81,6 +79,8 @@ This website is organized into left and right panels.
   This is organized into four tabs. First there tabs are one for each of the standardized assessments - SAT, AP and ACT respectively. 
 
   Fourth "School Comparison" tab  allows you to select the assessment type and any two high schools within the State of Georgia for comparison.
+  
+Shiny Application Link: http://kchalasa.shinyapps.io/GANationalTests_prj/
 
 
 ---
@@ -90,7 +90,7 @@ This website is organized into left and right panels.
 * State.Rank - Rank assigned to this school within the State of Georgia.
 * Selected.Schools.Rank - Rank assigned on the fly based on your current selection of the schools.
 
-* Ranking Criteria - Highest to the lowest. 
+* Ranking Criteria - Highest to the lowest  
 
 SAT - Rank assigned based on SAT Combined Score.  
 
@@ -98,152 +98,23 @@ ACT - Rank assigned based on ACT Composite Score
 
 AP - Rank assigned based on the percent of AP Course completions.
 
-* SAT Combined Average, AP Pass Percents were also calculated.
+* SAT Combined Average=SAT_AVG_Reading + SAT_AVG_Math + SAT_AVG_Writing
+* AP Pass Percents = (Total Exams with a Score of 3,4 or 5)/ (Total AP Exams Taken) *100
 
 
 ---
 
-## Alanta Metro Public School Districts Definition
 
-* Atlanta Public Schools
-* Cherokee County
-* Cobb County                                         
-* DeKalb County
-* Douglas County
-* Forsyth County
-* Fulton County
-* Gwinnett County
-* Buford City
-* Decatur City
-* Marietta City
-
----
+SAT 2014 Performance of Top 5 Schools in Georgia
 
 
-## AP 2014 Performance of Top 10 Schools in Georgia
-
-
-<div id = 'chart1a1449ce3594' class = 'rChart highcharts'></div>
+<div id = 'chart50c699d41f6' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart1a1449ce3594",
-"width":            800,
-"height":            400,
-"credits": {
- "href": null,
-"text": null 
-},
-"exporting": {
- "enabled": false 
-},
-"title": {
- "text": null 
-},
-"yAxis": [
- {
- "title": {
- "text": "AP_PASS_PCT" 
-} 
-} 
-],
-"series": [
- {
- "data": [
- [
- "Bremen High School",
-         81.63,
-98 
-],
-[
- "Chattahoochee High School",
-         83.55,
-1574 
-],
-[
- "Etowah High School",
-         81.97,
-638 
-],
-[
- "Gwinnett School of Mathematics Science and Technol",
-         81.76,
-1453 
-],
-[
- "McIntosh High School",
-         82.22,
-838 
-],
-[
- "Northview High School",
-         82.42,
-1826 
-],
-[
- "Roswell High School",
-          81.8,
-1857 
-],
-[
- "Walton High School",
-          88.9,
-3001 
-],
-[
- "Wheeler High School",
-         86.66,
-937 
-],
-[
- "Woodstock High School",
-         87.36,
-617 
-] 
-],
-"type": "bubble",
-"marker": {
- "radius":              3 
-} 
-} 
-],
-"legend": {
- "enabled": false 
-},
-"xAxis": [
- {
- "title": {
- "text": "School" 
-},
-"categories": [ "Bremen High School", "Chattahoochee High School", "Etowah High School", "Gwinnett School of Mathematics Science and Technol", "McIntosh High School", "Northview High School", "Roswell High School", "Walton High School", "Wheeler High School", "Woodstock High School" ] 
-} 
-],
-"subtitle": {
- "text": null 
-},
-"id": "chart1a1449ce3594",
-"chart": {
- "renderTo": "chart1a1449ce3594" 
-} 
-});
-        });
-    })(jQuery);
-</script>
-
----
-
-
-## SAT 2014 Performance of Top 5 Schools in Georgia
-
-
-<div id = 'chart1a142c353068' class = 'rChart highcharts'></div>
-<script type='text/javascript'>
-    (function($){
-        $(function () {
-            var chart = new Highcharts.Chart({
- "dom": "chart1a142c353068",
-"width":            800,
+ "dom": "chart50c699d41f6",
+"width":            400,
 "height":            400,
 "credits": {
  "href": null,
@@ -306,58 +177,13 @@ AP - Rank assigned based on the percent of AP Course completions.
 "subtitle": {
  "text": null 
 },
-"id": "chart1a142c353068",
+"id": "chart50c699d41f6",
 "chart": {
- "renderTo": "chart1a142c353068" 
+ "renderTo": "chart50c699d41f6" 
 } 
 });
         });
     })(jQuery);
 </script>
-
-
----
-
-# Interactive Report 
-
-Average Scores for Top Performing Schools by Assessment 
-
-Note for R Fans: Page under construction - functionality can be viewed using runDeck()]
-
-<div class="row-fluid">
-  <div class="span4">
-    <form class="well">
-      <label class="control-label" for="ASSMT">Choose Assessment Type</label>
-      <select id="ASSMT"><option value="SAT" selected>SAT</option>
-<option value="ACT">ACT</option>
-<option value="AP">AP</option></select>
-      <script type="application/json" data-for="ASSMT" data-nonempty="">{}</script>
-      <label class="control-label" for="Rnk">Choose School Rank 1 to 5</label>
-      <select id="Rnk"><option value="1" selected>1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option></select>
-      <script type="application/json" data-for="Rnk" data-nonempty="">{}</script>
-    </form>
-  </div>
-  <div class="span8">
-    <div id="ASSMT1" class="shiny-text-output"></div>
-    <br/>
-    <hr/>
-    <br/>
-    <div id="ASSMT" class="shiny-text-output"></div>
-  </div>
-</div>
-
-----
-
-
-## Thank You
-
-Thank You for your time.
-
-My First Shiny Application: https://kchalasa.shinyapps.io/GANationalTests_prj/
-
 
 

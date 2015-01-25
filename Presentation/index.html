@@ -41,7 +41,7 @@
   <hgroup class="auto-fadein">
     <h1>Coursera Developing Data Products</h1>
     <h2>Georgia High Schools - 2014 National Test Scores</h2>
-    <p>Kanti Chalasani; Jan 24th 2015<br/>All Things Data/Analytics; R Hacker</p>
+    <p>Kanti Chalasani; Jan 24th 2015<br/>Senior BI/Data Architect ; R Hacker</p>
   </hgroup>
   <article></article>  
 </slide>
@@ -121,6 +121,8 @@
 <p>Fourth &quot;School Comparison&quot; tab  allows you to select the assessment type and any two high schools within the State of Georgia for comparison.</p></li>
 </ul>
 
+<p>Shiny Application Link: <a href="http://kchalasa.shinyapps.io/GANationalTests_prj/">http://kchalasa.shinyapps.io/GANationalTests_prj/</a></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -133,7 +135,7 @@
     <ul>
 <li>State.Rank - Rank assigned to this school within the State of Georgia.</li>
 <li><p>Selected.Schools.Rank - Rank assigned on the fly based on your current selection of the schools.</p></li>
-<li><p>Ranking Criteria - Highest to the lowest. </p></li>
+<li><p>Ranking Criteria - Highest to the lowest  </p></li>
 </ul>
 
 <p>SAT - Rank assigned based on SAT Combined Score.  </p>
@@ -143,7 +145,8 @@
 <p>AP - Rank assigned based on the percent of AP Course completions.</p>
 
 <ul>
-<li>SAT Combined Average, AP Pass Percents were also calculated.</li>
+<li>SAT Combined Average=SAT_AVG_Reading + SAT_AVG_Math + SAT_AVG_Writing</li>
+<li>AP Pass Percents = (Total Exams with a Score of 3,4 or 5)/ (Total AP Exams Taken) *100</li>
 </ul>
 
   </article>
@@ -151,159 +154,17 @@
 </slide>
 
 <slide class="" id="slide-5" style="background:;">
-  <hgroup>
-    <h2>Alanta Metro Public School Districts Definition</h2>
-  </hgroup>
   <article data-timings="">
-    <ul>
-<li>Atlanta Public Schools</li>
-<li>Cherokee County</li>
-<li>Cobb County<br></li>
-<li>DeKalb County</li>
-<li>Douglas County</li>
-<li>Forsyth County</li>
-<li>Fulton County</li>
-<li>Gwinnett County</li>
-<li>Buford City</li>
-<li>Decatur City</li>
-<li>Marietta City</li>
-</ul>
+    <p>SAT 2014 Performance of Top 5 Schools in Georgia</p>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-6" style="background:;">
-  <hgroup>
-    <h2>AP 2014 Performance of Top 10 Schools in Georgia</h2>
-  </hgroup>
-  <article data-timings="">
-    <div id = 'chart1a1449ce3594' class = 'rChart highcharts'></div>
+<div id = 'chart50c699d41f6' class = 'rChart highcharts'></div>
 
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart1a1449ce3594",
-"width":            800,
-"height":            400,
-"credits": {
- "href": null,
-"text": null 
-},
-"exporting": {
- "enabled": false 
-},
-"title": {
- "text": null 
-},
-"yAxis": [
- {
- "title": {
- "text": "AP_PASS_PCT" 
-} 
-} 
-],
-"series": [
- {
- "data": [
- [
- "Bremen High School",
-         81.63,
-98 
-],
-[
- "Chattahoochee High School",
-         83.55,
-1574 
-],
-[
- "Etowah High School",
-         81.97,
-638 
-],
-[
- "Gwinnett School of Mathematics Science and Technol",
-         81.76,
-1453 
-],
-[
- "McIntosh High School",
-         82.22,
-838 
-],
-[
- "Northview High School",
-         82.42,
-1826 
-],
-[
- "Roswell High School",
-          81.8,
-1857 
-],
-[
- "Walton High School",
-          88.9,
-3001 
-],
-[
- "Wheeler High School",
-         86.66,
-937 
-],
-[
- "Woodstock High School",
-         87.36,
-617 
-] 
-],
-"type": "bubble",
-"marker": {
- "radius":              3 
-} 
-} 
-],
-"legend": {
- "enabled": false 
-},
-"xAxis": [
- {
- "title": {
- "text": "School" 
-},
-"categories": [ "Bremen High School", "Chattahoochee High School", "Etowah High School", "Gwinnett School of Mathematics Science and Technol", "McIntosh High School", "Northview High School", "Roswell High School", "Walton High School", "Wheeler High School", "Woodstock High School" ] 
-} 
-],
-"subtitle": {
- "text": null 
-},
-"id": "chart1a1449ce3594",
-"chart": {
- "renderTo": "chart1a1449ce3594" 
-} 
-});
-        });
-    })(jQuery);
-</script>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-7" style="background:;">
-  <hgroup>
-    <h2>SAT 2014 Performance of Top 5 Schools in Georgia</h2>
-  </hgroup>
-  <article data-timings="">
-    <div id = 'chart1a142c353068' class = 'rChart highcharts'></div>
-
-<script type='text/javascript'>
-    (function($){
-        $(function () {
-            var chart = new Highcharts.Chart({
- "dom": "chart1a142c353068",
-"width":            800,
+ "dom": "chart50c699d41f6",
+"width":            400,
 "height":            400,
 "credits": {
  "href": null,
@@ -366,66 +227,14 @@
 "subtitle": {
  "text": null 
 },
-"id": "chart1a142c353068",
+"id": "chart50c699d41f6",
 "chart": {
- "renderTo": "chart1a142c353068" 
+ "renderTo": "chart50c699d41f6" 
 } 
 });
         });
     })(jQuery);
 </script>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-8" style="background:;">
-  <hgroup>
-    <h1>Interactive Report</h1>
-  </hgroup>
-  <article data-timings="">
-    <p>Average Scores for Top Performing Schools by Assessment </p>
-
-<p>Note for R Fans: Page under construction - functionality can be viewed using runDeck()]</p>
-
-<div class="row-fluid">
-  <div class="span4">
-    <form class="well">
-      <label class="control-label" for="ASSMT">Choose Assessment Type</label>
-      <select id="ASSMT"><option value="SAT" selected>SAT</option>
-<option value="ACT">ACT</option>
-<option value="AP">AP</option></select>
-      <script type="application/json" data-for="ASSMT" data-nonempty="">{}</script>
-      <label class="control-label" for="Rnk">Choose School Rank 1 to 5</label>
-      <select id="Rnk"><option value="1" selected>1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option></select>
-      <script type="application/json" data-for="Rnk" data-nonempty="">{}</script>
-    </form>
-  </div>
-  <div class="span8">
-    <div id="ASSMT1" class="shiny-text-output"></div>
-    <br/>
-    <hr/>
-    <br/>
-    <div id="ASSMT" class="shiny-text-output"></div>
-  </div>
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-9" style="background:;">
-  <hgroup>
-    <h2>Thank You</h2>
-  </hgroup>
-  <article data-timings="">
-    <p>Thank You for your time.</p>
-
-<p>My First Shiny Application: <a href="https://kchalasa.shinyapps.io/GANationalTests_prj/">https://kchalasa.shinyapps.io/GANationalTests_prj/</a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -461,32 +270,8 @@
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Alanta Metro Public School Districts Definition'>
+        data-slide=5 title=''>
          5
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='AP 2014 Performance of Top 10 Schools in Georgia'>
-         6
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='SAT 2014 Performance of Top 5 Schools in Georgia'>
-         7
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Interactive Report'>
-         8
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Thank You'>
-         9
       </a>
     </li>
   </ul>
